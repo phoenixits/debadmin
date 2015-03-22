@@ -138,7 +138,22 @@ def installApache():
    os.system("php -v")
    time.sleep(2)
    
+def startApache():
+   print("#" * 70)
+   print("Starting Apache2 Service please wait...")
+   time.sleep(2)
+   os.system("clear")
+   os.system("service apache2 start")
+   print("Apache2 Server service started...")
+   time.sleep(2)
 
+def stopApache():
+   print("#" * 70)
+   print("Stopping Apache2 Service please wait...")
+   time.sleep(2)
+   os.system("clear")
+   os.system("service apache2 stop")
+   time.sleep(2)
 
 Header()        
 ans=True
@@ -150,7 +165,9 @@ while ans:
    4. Perform Updates & Upgrades & Clean Disk Space 
    5. Memory Usage and Free Memory
    6. Install Apache2 & PHP5
-   7. Quit
+   7. Start Apache2 Service
+   8. Stop Apache2 Service
+   9. Quit
    """)
    ans=raw_input("What would you like to do? ")
    if ans=="1":
@@ -184,8 +201,17 @@ while ans:
       os.system("clear")
       Header()
    elif ans=="7":
+      startApache()
+      time.sleep(2)
+      Header()
+   elif ans=="8":
+      stopApache()
+      time.sleep(2)
+      Header()
+   elif ans=="9":
       print("\nQuitting program...")
       ans = None
    else:
       time.sleep(1)
       print("\n You did something wrong. Try again")
+
