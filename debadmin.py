@@ -3,6 +3,8 @@
 
 import os
 import time
+from colorama import Fore, Back, Style
+
 
 os.system("clear")
 time.sleep(1)
@@ -11,7 +13,10 @@ def Header():
    print("#" * 70)
    os.system("whoami")
    print("Server:")
+   print(Fore.BLACK)
+   print(Back.GREEN)
    os.system("hostname -I")
+   print(Fore.RESET + Back.RESET + Style.RESET_ALL)
    print("Uptime:")
    os.system("uptime")
    print("Status:")
@@ -214,4 +219,5 @@ while ans:
    else:
       time.sleep(1)
       print("\n You did something wrong. Try again")
+      Header()
 
